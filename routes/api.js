@@ -92,7 +92,7 @@ module.exports = function (app) {
       { _id: ObjectId(thread_id) },
       { $set: { reported: true } }
       )
-      .then(result => res.send(result.value ? 'success' : 'some error occured'))
+      .then(result => res.send(result.value ? 'success' : 'thread not found'))
       .catch(err => Promise.reject(err));
     });
   });
